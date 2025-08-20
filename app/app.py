@@ -62,27 +62,29 @@ elif option == " Manual Input (Single) ":
         senior_citizen = st.selectbox("Senior Citizen", [0, 1])
         partner = st.selectbox("Partner", ["Yes", "No"])
         dependents = st.selectbox("Dependents", ["Yes", "No"])
+        tenure = st.number_input("Tenure (Months)", min_value=0, max_value=72, value=1)
 
     # ---- Contract ----
     with col2:
-        tenure = st.number_input("Tenure (Months)", min_value=0, max_value=72, value=1)
+        
         contract = st.selectbox("Contract", ["Month-to-month", "One year", "Two year"])
         paperless_billing = st.selectbox("Paperless Billing", ["Yes", "No"])
         payment_method = st.selectbox(
             "Payment Method",
             ["Electronic check", "Mailed check", "Bank transfer (automatic)", "Credit card (automatic)"]
         )
+        monthly_charges = st.number_input("Monthly Charges", min_value=0.0, value=0.0, step=0.1)
 
     # ---- Billing ----
     with col3:
-        monthly_charges = st.number_input("Monthly Charges", min_value=0.0, value=0.0, step=0.1)
+        
         total_charges = st.number_input("Total Charges", min_value=0.0, value=0.0, step=0.1)
-
-    # ---- Services ----
-    with col4:
         phone_service = st.selectbox("Phone Service", ["Yes", "No"])
         multiple_lines = st.selectbox("Multiple Lines", ["Yes", "No", "No phone service"])
         internet_service = st.selectbox("Internet Service", ["DSL", "Fiber optic", "No"])
+
+    # ---- Services ----
+    with col4:
         online_security = st.selectbox("Online Security", ["Yes", "No", "No internet service"])
         online_backup = st.selectbox("Online Backup", ["Yes", "No", "No internet service"])
         device_protection = st.selectbox("Device Protection", ["Yes", "No", "No internet service"])
