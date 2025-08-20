@@ -1,0 +1,14 @@
+# Core dependencies for Churn Model training & prediction
+numpy
+pandas
+scikit-learn
+xgboost
+joblib
+
+# Visualization
+matplotlib
+seaborn
+
+# App & Deployment
+streamlit
+flask
